@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MediaViewer</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Phone.Controls.ItemDisplayedEventArgs">
+            <summary>
+            Represents the index into the Items collection currently displayed by a MediaViewer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.LocalFolderThumbnailedImage.GetThumbnailImage">
+            <summary>
+            Returns a Stream representing the thumbnail image.
+            </summary>
+            <returns>Stream of the thumbnail image.</returns>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.LocalFolderThumbnailedImage.GetImage">
+            <summary>
+            Returns a Stream representing the full resolution image.
+            </summary>
+            <returns>Stream of the full resolution image.</returns>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.LocalFolderThumbnailedImage.ImageFileName">
+            <summary>
+            The path and file name of the full resolution image file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.LocalFolderThumbnailedImage.ThumbnailFileName">
+            <summary>
+            The path and file name of the thumbnail resolution image file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.LocalFolderThumbnailedImage.DateTaken">
+            <summary>
+            Represents the time the photo was taken, useful for sorting photos.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Phone.Controls.ThumbnailedImageViewer">
+            <summary>
+            Knowns how to display an IThumbnailedImage, picking the thumbnail or 
+            full resolution image to display based on the container size.  The
+            IThumbnailedImage to display should be assigned to the DataContext
+            property.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.MediaLibraryThumbnailedImage.GetThumbnailImage">
+            <summary>
+            Returns a Stream representing the thumbnail image.
+            </summary>
+            <returns>Stream of the thumbnail image.</returns>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.MediaLibraryThumbnailedImage.GetImage">
+            <summary>
+            Returns a Stream representing the full resolution image.
+            </summary>
+            <returns>Stream of the full resolution image.</returns>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.MediaLibraryThumbnailedImage.Picture">
+            <summary>
+            The Picture object that this instance represents.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.MediaLibraryThumbnailedImage.DateTaken">
+            <summary>
+            Represents the time the photo was taken, useful for sorting photos.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Phone.Controls.MediaViewer">
+            <summary>
+            Displays a virtualized list of Items, allowing the user to swipe 
+            from item to item.  An optional header and optional footer may
+            also be displayed.  The user can also pinch zoom into and back 
+            out of items.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Phone.Controls.MediaViewer._virtualizedItemPoolSize">
+            <summary>
+            The number of items to load at a time.  Must be odd.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Phone.Controls.MediaViewer._itemGutter">
+            <summary>
+            The amount of space between items.  For full-screen items this will only be visible when scrolling from
+            one item to another.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Phone.Controls.MediaViewer._maxDraggingSquishDistance">
+            <summary>
+            How many pixels past the beginning or end of the list the user will be allowed to drag.
+            Note that during a drag past the beginning or end of the list the user will see the "squish" animation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Phone.Controls.MediaViewer._minDraggingSquishScale">
+            <summary>
+            How much to squish the UI if you drag maxDraggingSquishDistance past the beginning or end of the UI.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Phone.Controls.MediaViewer._unsquishAnimationMilliseconds">
+            <summary>
+            How long the unsquish animation should take
+            </summary>
+        </member>
+        <member name="F:Microsoft.Phone.Controls.MediaViewer._dragStagnationTimeThreshold">
+            <summary>
+            How long should a pause in dragging be before it resets the inertia calculation?  This is in milliseconds.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Phone.Controls.MediaViewer._dragStagnationDistanceThreshold">
+            <summary>
+            Tolerance in pixels for considering a drag stopped
+            </summary>
+        </member>
+        <member name="F:Microsoft.Phone.Controls.MediaViewer._displayedElementIndex">
+            <summary>
+            The index of the displayed element.  An element can be the header, an item, or the footer.
+            If there is no header, footer, or items, this value is null;
+            </summary>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.MediaViewer.InitializeVirtualizationIfReady">
+            <summary>
+            Initializes virtualization if all of the prerequisites are available, so it's safe to call once each is set.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.MediaViewer.JumpToHeader">
+            <summary>
+            Displays the header without animating to it.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.MediaViewer.JumpToFooter">
+            <summary>
+            Displays the footer without animating to it.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.MediaViewer.JumpToItem(System.Int32)">
+            <summary>
+            Displays an item without animating to it.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.MediaViewer.ScrollLeftOneElement">
+            <summary>
+            Animates to the element to the left of the currently displayed element.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.MediaViewer.FindNameInHeader(System.String)">
+            <summary>
+            Finds an object in the header by name
+            </summary>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.MediaViewer.FindNameInFooter(System.String)">
+            <summary>
+            Finds an object in the footer by name
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.MediaViewer.ItemTemplate">
+            <summary>
+            The DataTemplate used to represent each virtualized item.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.MediaViewer.Items">
+            <summary>
+            The collection of items to display in a virtualized fashion.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.MediaViewer.DisplayedElement">
+            <summary>
+            Indicates which type of element is displayed (e.g. Header, Item, Footer).
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.MediaViewer.DisplayedItemIndex">
+            <summary>
+            Index of the currently displayed Item, if any.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.MediaViewer.InitiallyDisplayedElement">
+            <summary>
+            Indicates which element should be displayed initially - the first or last one.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.MediaViewer.HeaderVisibility">
+            <summary>
+            Shows or hides the optional header.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.MediaViewer.FooterVisibility">
+            <summary>
+            Shows or hides the optional footer.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.MediaViewer.Header">
+            <summary>
+            The root FrameworkElement of the Header.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.MediaViewer.Footer">
+            <summary>
+            The root FrameworkElement of the Footer.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.MediaViewer.HeaderTemplate">
+            <summary>
+            The DataTemplate used to render the header.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.MediaViewer.FooterTemplate">
+            <summary>
+            The DataTemplate used to render the footer.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.MediaViewer.DragEnabled">
+            <summary>
+            Enables or disables dragging by the user.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Phone.Controls.MediaViewer.HeaderDisplayed">
+            <summary>
+            Raised when the header is displayed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Phone.Controls.MediaViewer.ItemDisplayed">
+            <summary>
+            Raised when an item is displayed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Phone.Controls.MediaViewer.FooterDisplayed">
+            <summary>
+            Raised when the footer is displayed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Phone.Controls.MediaViewer.ItemZoomed">
+            <summary>
+            Raised when the currently displayed item is zoomed in.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Phone.Controls.MediaViewer.ItemUnzoomed">
+            <summary>
+            Raised when the currently displayed item is zoomed back out to nuetral.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Phone.Controls.ThumbnailedImageDateComparer">
+            <summary>
+            Compares two IThumbnailedImage instances by DateTaken
+            </summary>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.ThumbnailedImageDateComparer.Compare(Microsoft.Phone.Controls.IThumbnailedImage,Microsoft.Phone.Controls.IThumbnailedImage)">
+            <summary>
+            Compare two IThumbnailedImage instances by DateTaken
+            </summary>
+            <param name="x">First IThumbnailedImage to examine</param>
+            <param name="y">IThumbnailedImage to compare to the first IThumbnailedImage</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Phone.Controls.VirtualizedItem">
+            <summary>
+            Represents a virtualized item in a MediaViewer.  It knows which
+            index it represents in the MediaViewer.Items collection, it holds
+            the FrameworkElement reference for the ItemTemplate instance, and
+            it handles zooming the item.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Phone.Controls.VirtualizedItem._currentZoomRatio">
+            <summary>
+            Stores the current zoom ratio, where 1.0 is zoomed all the way out to fit within the control.
+            NOTE: this is not updated during a pinch operation, but serves as the "settled" zoom ratio
+            that is only updated after a pinch is complete.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Phone.Controls.VirtualizedItem._zoomRatioDuringPinch">
+            <summary>
+            The temporary zoom ratio used during a pinch operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Phone.Controls.VirtualizedItem._actualContentSize">
+            <summary>
+            Since we set a bounding box on the content and let it fill that box as much as possible, the actual size of the content is likely smaller.
+            This stores the actual size of the content that has been rendered.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.VirtualizedItem.#ctor(System.Windows.Size)">
+            <summary>
+            Creates a VirtualizedItem of a particular presentation Size.
+            </summary>
+            <param name="size">Initial Size for the item.</param>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.VirtualizedItem.DoubleTapped">
+            <summary>
+            Processes a double tap performed on the virtualized item.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.VirtualizedItem.ZoomAllTheWayOut">
+            <summary>
+            Zooms out to the original Size.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.VirtualizedItem.ResizeContent">
+            <summary>
+            Resizes the content itself into the "settled" zoom ratio (currentZoomRatio).  
+            This is not used during a pinch operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.VirtualizedItem.ScaleContentDuringPinch">
+            <summary>
+            Used during a pinch operation to scale the content for a fast pinch effect.  This does not actually change
+            the layout of the content, so this can be done very quickly.  When the pinch completes, ResizeContent() will
+            update the content's layout with the final zoom ratio.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Phone.Controls.VirtualizedItem.OnZoomableContentLayoutUpdated(System.Object,System.EventArgs)">
+            <summary>
+            When the ZoomableContent calculates a new DesiredSize, we need to update our Viewport bounds
+            and possibly center the content now that the DesiredSize is known.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.VirtualizedItem.RepresentingItemIndex">
+            <summary>
+            The index in the MediaViewer.Items collection that this instance
+            represents
+            </summary>
+        </member>
+        <member name="E:Microsoft.Phone.Controls.VirtualizedItem.ItemZoomed">
+            <summary>
+            Raised when an item is zoomed in.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Phone.Controls.VirtualizedItem.ItemUnzoomed">
+            <summary>
+            Raised when an item is zoomed out to its original size.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.VirtualizedItem.DataTemplate">
+            <summary>
+            The DataTemplate that should be instantiated to represent an item.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.VirtualizedItem.RootFrameworkElement">
+            <summary>
+            The root FrameworkElement of the item.  Exposed so the MediaViewer
+            can position it on the parent Canvas.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.VirtualizedItem.DataContext">
+            <summary>
+            The Item to be virtualized is assigned to this property.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.VirtualizedItem.Size">
+            <summary>
+            The render Size available for this virtualized item.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Phone.Controls.VirtualizedItem.IsZoomedIn">
+            <summary>
+            Returns true if the item is zoomed in.
+            </summary>
+        </member>
+    </members>
+</doc>
