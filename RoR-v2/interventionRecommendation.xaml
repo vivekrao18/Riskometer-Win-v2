@@ -1,0 +1,185 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PhoneApp1.PivotPage2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="None" ImageSource="/Assets/AlignmentGrid.png"/>
+        </Grid.Background>
+        <!--Pivot Control-->
+        <phone:Pivot x:Name="IRNavigation" Title="CARE PATHWAY FINDER">
+            <!--Pivot item one-->
+            <phone:PivotItem Header="patient details">
+                <Grid>
+                    <StackPanel x:Name="patientDetailsPivot" Height="525" VerticalAlignment="Top">
+                        <TextBlock Margin="20,20,0,0" TextWrapping="Wrap" Text="Age : 64"/>
+                        <TextBlock Margin="20,20,0,0" TextWrapping="Wrap" Text="Gender : Male"/>
+                        <TextBlock Margin="20,20,0,0" TextWrapping="Wrap" Text="Race : African American"/>
+                        <TextBlock Margin="20,20,0,0" TextWrapping="Wrap" Text="Previous Diagnosis: Heart Failure, Diabetes"/>
+                        <TextBlock Margin="20,20,0,0" TextWrapping="Wrap" Text="Risk-Score : 76 %"/>
+                        <Viewbox Margin="10,83,22,386">
+                            <Canvas Name="graphCanvas" Width="104" Height="16" Background="Black"  >
+                                <Rectangle Height="16" Width="104">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,1">
+                                            <GradientStop Color="Red" Offset="0.996"/>
+                                            <GradientStop Color="#FF00FF01" Offset="0"/>
+                                            <GradientStop Color="#FFFFFC01" Offset="0.5"/>
+                                            <GradientStop Color="#FFFFF501" Offset="0.6"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <!-- <Rectangle Height="16" Width="40" Fill="Yellow" Canvas.Left="45"/>
+                    <Rectangle Height="16" Width="15" Fill="Red" Canvas.Left="85"/>-->
+                                <StackPanel Name="graphStack" Canvas.Top="-11" Canvas.Left="76">
+                                    <TextBlock Name="graphProbability" Text="76%" FontSize="5" />
+                                    <Rectangle Name="graphBar" Width="2" Height="24" Fill="Black" />
+                                </StackPanel>
+
+                            </Canvas>
+
+                        </Viewbox>
+
+                    </StackPanel>
+                    <Button Content="Next : Diagnosis"  x:Name="nextButtonPatientDetails" HorizontalAlignment="Right" VerticalAlignment="Top" Width="385" Margin="0,510,-27,0"  Click="nextButtonPatientDetails_Click" BorderThickness="0">
+                                
+                    </Button>
+                    <Button Margin="368,500,3,13" BorderThickness="0" Click="nextButtonPatientDetails_Click">
+                        <Button.Background>
+                        <ImageBrush ImageSource="/Assets/appbar.next.rest.png"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem Header="intial inputs" x:Name="diagnosis">
+                <Grid>
+                    <StackPanel Margin="0,-30,0,0">
+                        <Button x:Name="but1" Content="Male" HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="100" Width="252" Background="#FFC11717" Click="Button_Click" BorderBrush="#FFE9D3D3" />
+                        <Button x:Name="but2" Content="Age : 60-65 " HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="100" Width="252" Background="#FFBD2C2C" Click="but2_Click"/>
+                        <Button x:Name="but3" Content="African American" HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="100" Width="252" Background="#FFBC4646" Click="but3_Click"/>
+                        <Button x:Name="but4" Content="Homeless" HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="100" Width="252" Background="#FFC27474" Click="but4_Click"/>
+
+
+                    </StackPanel>
+                   
+                    <Button Content="Next : Comorbidities" x:Name="nextButtonDiagnosis" HorizontalAlignment="Right" VerticalAlignment="Top" Width="385" Margin="0,509,-7,0"  Click="nextButtonDiagnosis_Click" BorderThickness="0"/>
+                    <Button Margin="368,500,3,13" BorderThickness="0" Click="nextButtonDiagnosis_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Assets/appbar.next.rest.png"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+
+            </phone:PivotItem>
+            <phone:PivotItem Header="comorbidities" x:Name="procedure">
+                <Grid>
+                    <StackPanel Margin="0,-25,0,0">
+                        <Button x:Name="butn1" Content="Anemia" HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="90" Width="252" Background="#FF05886A" Click="butn1_Click" BorderBrush="#FFFBFCF6" />
+                        <Button x:Name="butn2" Content="COPD" HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="90" Width="252" Background="#FF29A588" Click="butn2_Click"/>
+                        <Button x:Name="butn3" Content="Congestive HF" HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="90" Width="252" Background="#FF53C9AD" Click="butn3_Click"/>
+                        <Button x:Name="butn4" Content="Renal Failure" HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="90" Width="252" Background="#FF77D8C1" Click="butn4_Click"/>
+                        <Button x:Name="butn5" Content="Lytes Disorder" HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="90" Width="252" Background="#FF91CABD" Click="butn5_Click"/>
+
+
+                    </StackPanel>
+                    
+                    <Button Content="Next : Interventions" x:Name="nextButtonprocedure" HorizontalAlignment="Right" VerticalAlignment="Top" Width="385" Margin="0,509,-7,0"  Click="nextButtonProcedure_Click" BorderThickness="0"/>
+                    <Button Margin="368,500,3,13" BorderThickness="0" Click="nextButtonProcedure_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Assets/appbar.next.rest.png"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="interventions" x:Name="intervention">
+                <Grid>
+                    <StackPanel Margin="0,-30,0,0">
+                        <Button x:Name="Ibtn1" Content="Blood Processing" HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="75" Width="252" Background="#FF395E05" Click="Ibtn1_Click"  />
+                        <Button x:Name="Ibtn2" Content="Echo-Cardiogram" HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="75" Width="252" Background="#FF4F8208" Click="Ibtn2_Click"  />
+                        <Button x:Name="Ibtn3" Content="CT-Scan" HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="75" Width="252" Background="#FF609D0A" Click="Ibtn3_Click"  />
+                        <Button x:Name="Ibtn4" Content="Cardiac Stress Test" HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="75" Width="252" Background="#FF75BC11" Click="Ibtn4_Click"  />
+                        <Button x:Name="Ibtn5" Content="Emergency Room" HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="75" Width="252" Background="#FF89DD14" Click="Ibtn5_Click" />
+                        <Button x:Name="Ibtn6" Content="Physical Therapy" HorizontalAlignment="Left" Margin="105,14,0,0" VerticalAlignment="Top" Height="75" Width="252" Background="#FF91EF0C" Click="Ibtn6_Click"/>
+
+
+                    </StackPanel>
+                    
+                    <Button Content="Next : Results" x:Name="nextButtonIntervention" HorizontalAlignment="Right" VerticalAlignment="Top" Width="385" Margin="0,514,-42,0"  Click="nextButtonIntervention_Click"  BorderThickness="0"/>
+                    <Button Margin="368,500,3,13" BorderThickness="0" Click="nextButtonIntervention_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Assets/appbar.next.rest.png"/>
+                        </Button.Background>
+                    </Button>
+                    
+                </Grid>
+
+
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="result" x:Name="result">
+                <Grid>
+                    <StackPanel>
+                        <TextBlock FontSize="24" Text="Previous Risk score : 76%"/>
+                        <TextBlock FontSize="24" Text="Patient details : Age :64, Homeless"/>
+                        <TextBlock FontSize="24" Text="Comorbidities : Anemia , Congestive HF"/>
+                        <TextBlock FontSize="24" Text="Interventions : CT-Scan, Emergency room"/>
+                        <TextBlock FontSize="24" Text=""/>
+                        <TextBlock FontSize="24" Text="Risk score for selected pathway is : 50.67%" Height="40"/>
+                        <TextBlock FontSize="24" Text="Risk Score reduced by 20.6% "/>
+                        <Viewbox Margin="10,75,22,386">
+                            <Canvas Name="graphCanvas1" Width="104" Height="16" Background="Black"  >
+                                <Rectangle Height="16" Width="104">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,1">
+                                            <GradientStop Color="Red" Offset="0.996"/>
+                                            <GradientStop Color="#FF00FF01" Offset="0"/>
+                                            <GradientStop Color="#FFFFFC01" Offset="0.5"/>
+                                            <GradientStop Color="#FFFFF501" Offset="0.6"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <!-- <Rectangle Height="16" Width="40" Fill="Yellow" Canvas.Left="45"/>
+                    <Rectangle Height="16" Width="15" Fill="Red" Canvas.Left="85"/>-->
+                                <StackPanel Name="graphStack1" Canvas.Top="-11" Canvas.Left="50.67">
+                                    <TextBlock Name="graphProbability1" Text="50.67%" FontSize="5" />
+                                    <Rectangle x:Name="graphBar1" Width="2" Height="24" Fill="Black" />
+                                    <TextBlock Name="graphProbability4" Text="After" FontSize="3" HorizontalAlignment="Center" />
+                                    <TextBlock Text="Intervention" FontSize="3" HorizontalAlignment="Center" />
+                                </StackPanel>
+                                <StackPanel Name="graphStack2" Canvas.Top="-11" Canvas.Left="76">
+                                    <TextBlock Name="graphProbability2" Text="76%" FontSize="5" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                                    <Rectangle x:Name="graphBar2" Width="2" Height="24" Fill="Gray" Opacity="01" />
+                                    <TextBlock Name="graphProbability3" Text="Previous" FontSize="3" />
+                                </StackPanel>
+
+                            </Canvas>
+
+                        </Viewbox>
+                       
+                    </StackPanel>
+                   
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

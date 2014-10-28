@@ -1,0 +1,75 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PhoneApp1.patientRiskScoreDummyPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <!--Pivot Control-->
+        <Grid.Background>
+            <ImageBrush Stretch="None" ImageSource="/Assets/AlignmentGrid.png"/>
+        </Grid.Background>
+        <phone:Pivot Title="DASHBOARD" x:Name="resultsPatient" Loaded="Pivot_Loaded" FontFamily="Portable User Interface">
+            <!--Pivot item one-->
+            <phone:PivotItem x:Name="patientNameInHeading" Header="welcome">
+
+                <!--ContentPanel - place additional content here-->
+                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+                    <ScrollViewer HorizontalAlignment="Left" Height="836" Margin="10,0,0,-229" VerticalAlignment="Top" Width="436">
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="837" Width="436">
+
+                            <!--<Button  x:Name="Score" FontSize="120" FontWeight="Bold" Content="jjkh" BorderThickness="0" Height="189" FontFamily="Portable User Interface" Margin="-12,0,0,0">
+                                <Button.Background>
+                                    <SolidColorBrush Color="AliceBlue" Opacity="0.2"/>
+                                </Button.Background>
+                            </Button>-->
+                            <!--<TextBlock HorizontalAlignment="Center" x:Name="Score" TextWrapping="Wrap" FontSize="120" FontWeight="Bold" TextAlignment="Center" Text="jjkh" Height="189"/>-->
+                            <!--<Button  x:Name="Score" FontSize="120" FontWeight="Bold" Content="jjkh" BorderThickness="0" Height="189" FontFamily="Portable User Interface" Margin="-12,0,0,0">
+                                <Button.Background>
+                                    <SolidColorBrush Color="AliceBlue" Opacity="0.2"/>
+                                </Button.Background>
+                            </Button>-->
+                            <TextBlock x:Name="Score" Text="" Margin="0,0,0,0" FontSize="120" FontWeight="Bold" TextAlignment="Center" Foreground="#FFF91515"/>
+                            <!--<TextBlock HorizontalAlignment="Center" x:Name="Score" TextWrapping="Wrap" FontSize="120" FontWeight="Bold" TextAlignment="Center" Text="jjkh" Height="189"/>-->
+                            <TextBlock TextWrapping="Wrap" Text="Top Readmission Factors are:" Height="40" FontSize="26"/>
+                            <TextBlock TextWrapping="Wrap" Text="1. Diabetes" Height="40" FontSize="24"/>
+                            <TextBlock TextWrapping="Wrap" Text="2. Prior hospitalization" Height="40" FontSize="24"/>
+                            <TextBlock TextWrapping="Wrap" Text=""/>
+                            <TextBlock TextWrapping="Wrap" Text="Top Readmission Contributors are:" Height="40" FontSize="26"/>
+                            <TextBlock x:Name="anemia" Tap="anemia_Tap" TextWrapping="Wrap" TextDecorations="Underline" Text="1.  Anemia" FontFamily="Portable User Interface" Height="40" Foreground="#FF7CA1F7" FontStyle="Italic" FontSize="24"/>
+                            <TextBlock x:Name="dialysis" Tap="dialysis_Tap" TextDecorations="Underline" TextWrapping="Wrap" Text="2. Pneumonia" Height="40" Foreground="#FF7CA1F7" FontStyle="Italic" FontSize="24"/>
+                            <TextBlock x:Name="cardio" Tap="cardio_Tap" TextWrapping="Wrap" Text="3. Cardio Respiratory Failure and Shock" Height="40" Foreground="#FF7CA1F7" FontStyle="Italic" TextDecorations="Underline" FontSize="24"/>
+
+                            <CheckBox  Foreground="White" Checked="monitorPatient_Checked" Unchecked="monitorPatient_Unchecked" Content="" x:Name="monitorPatient" Margin="-12,0,0,0"/>
+
+                        </StackPanel>
+
+
+                    </ScrollViewer>
+                    <Button Content="Care Pathway Finder" Margin="-3,516,0,0" Height="83" VerticalAlignment="Top" Click="Button_Click_1"/>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="anemia" x:Name="anemiaPivot">
+                <Image Source="/Assets/anemia.png"/>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="dialysis" x:Name="dialysisPivot">
+                <Image Source="/Assets/pneumonia.png"></Image>
+            </phone:PivotItem>
+            <phone:PivotItem Header="cardio-respiratory-failure" x:Name="cardioPivot">
+                <Image Source="/Assets/cardio.png"></Image>
+            </phone:PivotItem>
+        </phone:Pivot>
+        <TextBlock Foreground="White" FontStyle="Italic" HorizontalAlignment="Left" Margin="260,20,0,0" TextWrapping="Wrap" Text="cwds.uw.edu/riskometer" VerticalAlignment="Top" Width="220" TextDecorations="Underline"/>
+    </Grid>
+</phone:PhoneApplicationPage>
