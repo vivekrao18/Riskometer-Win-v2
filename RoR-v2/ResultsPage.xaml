@@ -56,7 +56,7 @@
             <!--  <phone:WebBrowser RenderTransformOrigin="60,79" x:Name="webview" HorizontalAlignment="Left" Margin="55,53,0,0" VerticalAlignment="Top" Height="261" Width="338" IsScriptEnabled="True" ScrollViewer.VerticalScrollBarVisibility="Disabled"/> -->
             <ScrollViewer HorizontalAlignment="Left" Width="456" Margin="0,249,0,50">
 
-                <StackPanel  x:Name="ContentPanel" HorizontalAlignment="Left" Height="453" VerticalAlignment="Top" Width="456"/>
+             <StackPanel  x:Name="ContentPanel" HorizontalAlignment="Left" Height="453" VerticalAlignment="Top" Width="456"/>
             </ScrollViewer>
             <TextBlock x:Name="disclaimer" Visibility="Collapsed" HorizontalAlignment="Left" Margin="10,623,0,-35" TextWrapping="Wrap" Text="*Disclaimer: Risk Score and associated factors are not final diagnosis, it is purely for consultative purposes only" VerticalAlignment="Top" Height="74" Width="446" FontSize="15"/>
             <TextBlock x:Name="Prob" Text="" Margin="10,83,14,0" FontSize="50" FontWeight="Bold" TextAlignment="Center" Foreground="#FFF91515" Height="140" VerticalAlignment="Top"/>

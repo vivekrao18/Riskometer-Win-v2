@@ -1,6 +1,6 @@
-﻿<xapCache source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\Bin\Debug\PhoneApp1_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="23-Oct-14 8:09:28 PM">
-  <file source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="23-Oct-14 8:06:18 PM" />
-  <file source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\obj\Debug\PhoneApp1.dll" archivePath="PhoneApp1.dll" lastWriteTime="23-Oct-14 8:09:22 PM" />
+﻿<xapCache source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\Bin\Debug\PhoneApp1_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="11-Nov-14 6:06:19 PM">
+  <file source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="10-Nov-14 3:36:56 PM" />
+  <file source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\obj\Debug\PhoneApp1.dll" archivePath="PhoneApp1.dll" lastWriteTime="11-Nov-14 6:06:12 PM" />
   <file source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="06-May-14 12:37:45 PM" />
   <file source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\Assets\anemia.PNG" archivePath="Assets\anemia.PNG" lastWriteTime="13-May-14 8:20:47 AM" />
   <file source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\Assets\appbar.next.rest.png" archivePath="Assets\appbar.next.rest.png" lastWriteTime="03-Oct-14 12:34:38 PM" />
@@ -66,6 +66,6 @@
   <file source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\packages\Newtonsoft.Json.6.0.3\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.xml" archivePath="Newtonsoft.Json.xml" lastWriteTime="03-May-14 9:10:12 PM" />
   <file source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\Assets\ROR-App_03.png" archivePath="Assets\ROR-App_03.png" lastWriteTime="09-May-14 2:28:34 PM" />
   <file source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="23-Sep-14 3:34:59 PM" />
-  <file source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="23-Oct-14 8:09:26 PM" />
-  <file source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="23-Oct-14 8:06:18 PM" />
+  <file source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="11-Nov-14 6:06:17 PM" />
+  <file source="C:\Users\Vivek\Documents\Visual Studio 2013\Projects\PhoneApp1\PhoneApp1\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="10-Nov-14 3:36:56 PM" />
 </xapCache>

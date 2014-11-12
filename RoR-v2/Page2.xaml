@@ -43,14 +43,15 @@
                     </StackPanel>
 
                     <Button Name="comorbidities" Content="Comorbidities" Click="comorbidities_Click"/>
-                    <StackPanel Name="stackPanelComor" Visibility="Collapsed" Margin="25,0,25,0">
-                        <Button Content="Anemia" Background="#FF44AECF"/>
+                    <!--<ScrollViewer Margin="25,0,25,0" Height="244">-->
+                        <StackPanel Name="stackPanelComor" Visibility="Collapsed" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,0,25,0">
+                        <!--<Button Content="Anemia" Background="#FF44AECF"/>
                         <Button Content="COPD" Background="#FF44AECF"/>
                         <Button Content="Congestive HF" Background="#FF44AECF"/>
                         <Button Content="Renal Failure" Background="#FF44AECF"/>
-                        <Button Content="Lytes Disorder" Background="#FF44AECF"/>
-                    </StackPanel>
-                    
+                        <Button Content="Lytes Disorder" Background="#FF44AECF"/>-->
+                        </StackPanel>
+                    <!--</ScrollViewer>-->
                     <Button Name="interventions" Content="Interventions" Click="interventions_Click"/>
                     <StackPanel Name="stackPanelInterventions" Visibility="Collapsed" Margin="25,0,25,0">
                         <Button Content="Blood Processing" Background="#FF44AECF"/>
